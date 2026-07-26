@@ -1,0 +1,12 @@
+:root { color-scheme: dark; }
+.stApp { background: #212121; color: #ececec; }
+[data-testid="stHeader"] { background: transparent; }
+[data-testid="stMainBlockContainer"] { max-width: 840px; padding-top: 2rem; padding-bottom: 8rem; }
+.hero { text-align: center; padding: 1.6rem 0 2.1rem; }
+.hero h1 { font-size: 2rem; letter-spacing: -.04em; margin: 0; }
+.hero p { color: #a8a8a8; margin-top: .45rem; }
+[data-testid="stChatMessage"] { background: transparent; padding: 1.25rem .4rem; border: 0; }
+[data-testid="stChatInput"] { border: 1px solid #555; border-radius: 1.4rem; background: #303030; box-shadow: 0 2px 12px rgba(0,0,0,.24); }
+[data-testid="stChatInput"] textarea { color: #f4f4f4; }
+[data-testid="stChatInput"] textarea::placeholder { color: #a5a5a5; }
+[data-testid="stChatMessageAvatarUser"] { background: #555; }

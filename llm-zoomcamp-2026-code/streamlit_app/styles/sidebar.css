@@ -1,0 +1,8 @@
+[data-testid="stSidebar"] { background: #171717; border-right: 1px solid #303030; }
+[data-testid="stSidebar"] * { color: #ececec; }
+.brand { font-size: 1.3rem; font-weight: 700; letter-spacing: -.04em; margin: .3rem 0; }
+.brand span { margin-left: .35rem; }
+.side-label { font-size: .68rem; font-weight: 700; letter-spacing: .08em; color: #989898 !important; margin-top: 1.5rem; }
+.connection { color: #bcbcbc; font-size: .85rem; display: flex; align-items: center; gap: .5rem; }
+.connection i { width: .5rem; height: .5rem; border-radius: 50%; display: inline-block; }
+.connection .online { background: #28c840; }.connection .offline { background: #eab308; }
