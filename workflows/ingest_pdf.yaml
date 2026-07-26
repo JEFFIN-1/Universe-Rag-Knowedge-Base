@@ -1,0 +1,9 @@
+name: ingest-pdf
+description: Extract, normalize, chunk, embed, and register a PDF.
+command: python -m ingestion.register storage/raw/<document>.pdf
+steps:
+  - extract_pdf
+  - normalize_text
+  - chunk_text
+  - embed_texts
+  - index_chunks
