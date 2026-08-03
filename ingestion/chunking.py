@@ -2,6 +2,13 @@
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+def clean_text(text):
+    text = text.replace("\u200b", " ")
+    text = text.replace("\n", " ")
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
 def split_into_chunks(text):
 
     splitter = RecursiveCharacterTextSplitter(
@@ -11,6 +18,8 @@ def split_into_chunks(text):
             "\n\n",
             "\n",
             ". ",
+            "? ",
+            "! ",
             " ",
             ""
         ]

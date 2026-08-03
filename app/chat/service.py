@@ -1,16 +1,32 @@
-"""Grounded chat orchestration."""
-
-import os
-
-from openai import OpenAI
-
-from app.prompts.chat import build_messages
-from app.retrieval.search import search
+from app.retrieval.hybrid import hybrid_search
+from app.prompts.prompt_builder import build_prompt
+from app.llm.client import generate_answer
 
 
-def answer_question(question: str, limit: int = 5) -> dict[str, object]:
-    documents = search(question, limit)
-    completion = OpenAI(api_key=os.getenv("OPENAI_API_KEY")).chat.completions.create(
-        model=os.getenv("CHAT_MODEL", "gpt-4o-mini"), messages=build_messages(question, documents), temperature=0,
+def ask(question: str, top_k: int = 5) -> dict:
+    """
+    Complete RAG pipeline.
+
+    Returns:
+        {
+            "answer": "...",
+            "documents": [...]
+        }
+    """
+
+    documents = hybrid_search(
+        query=question,
+        top_k=top_k
     )
-    return {"answer": completion.choices[0].message.content, "sources": documents}
+
+    prompt = build_prompt(
+        query=question,
+        documents=documents
+    )
+
+    answer = generate_answer(prompt)
+
+    return {
+        "answer": answer,
+        "documents": documents
+    }

@@ -1,8 +1,18 @@
-"""FastAPI application entry point."""
-
 from fastapi import FastAPI
 
 from app.api.routes import router
 
-app = FastAPI(title="RAG Project API", version="0.1.0")
+app = FastAPI(
+    title="RAG API",
+    version="1.0.0"
+)
+
 app.include_router(router)
+
+
+@app.get("/")
+def root():
+    return {
+        "message": "RAG API is running!",
+        "docs": "/docs"
+    }
