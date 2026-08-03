@@ -82,11 +82,3 @@ curl -X POST http://localhost:8000/chat \
 | `ELASTICSEARCH_URL` | Elasticsearch connection used by ingestion/search | `http://localhost:9200` |
 | `ELASTICSEARCH_INDEX` | Index created by the ingestion store | `rag-documents` |
 | `RAG_API_URL` | Streamlit-to-API connection | `http://localhost:8000` |
-
-## Notes for contributors
-
-Keep source PDFs in `storage/raw/`; do not commit private, licensed, or sensitive documents. The repository presently contains a few parallel/unfinished modules with different index names and embedding backends. Align those interfaces before treating hybrid retrieval as production-ready.
-
-## License
-
-No license file is currently included. Add one before distributing the project.
