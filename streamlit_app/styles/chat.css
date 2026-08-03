@@ -1,12 +1,58 @@
 :root { color-scheme: dark; }
 .stApp { background: #212121; color: #ececec; }
-[data-testid="stHeader"] { background: transparent; }
-[data-testid="stMainBlockContainer"] { max-width: 840px; padding-top: 2rem; padding-bottom: 8rem; }
-.hero { text-align: center; padding: 1.6rem 0 2.1rem; }
-.hero h1 { font-size: 2rem; letter-spacing: -.04em; margin: 0; }
-.hero p { color: #a8a8a8; margin-top: .45rem; }
-[data-testid="stChatMessage"] { background: transparent; padding: 1.25rem .4rem; border: 0; }
-[data-testid="stChatInput"] { border: 1px solid #555; border-radius: 1.4rem; background: #303030; box-shadow: 0 2px 12px rgba(0,0,0,.24); }
-[data-testid="stChatInput"] textarea { color: #f4f4f4; }
-[data-testid="stChatInput"] textarea::placeholder { color: #a5a5a5; }
-[data-testid="stChatMessageAvatarUser"] { background: #555; }
+[data-testid="stHeader"] { background: #212121; }
+[data-testid="stMainBlockContainer"] { max-width: 48rem; padding-top: 2.5rem; padding-bottom: 8rem; }
+.hero { text-align: center; margin: 0 0 1.4rem; padding: 1rem 0; }
+.hero h1 { color: #f4f4f4; font-size: 1.9rem; letter-spacing: -.04em; margin: 0; }
+.hero p { color: #a8a8a8; margin: .45rem 0 0; }
+[data-testid="stChatMessage"] { background: transparent; padding: 1.1rem 0; border: 0; }
+[data-testid="stChatMessageContent"] { background: transparent; border: 0; box-shadow: none; padding: 0 .2rem; color: #ececec; }
+/* Sent prompts receive a bubble sized to their text, not the full chat width. */
+.user-message-text {
+  display: inline-block;
+  background: #2f2f2f !important;
+  border: 1px solid #3d3d3d !important;
+  border-radius: .9rem !important;
+  padding: .75rem .95rem !important;
+}
+[data-testid="stChatMessageAvatarUser"],
+[data-testid="stChatMessageAvatarAssistant"] { display: none; }
+[data-testid="stChatMessage"] > div:last-child { width: 100%; }
+[data-testid="stBottom"],
+[data-testid="stBottom"] > div,
+[data-testid="stBottomBlockContainer"] { background: #212121 !important; }
+/* Keep the composer visibly separate from the page—not transparent/plain text. */
+div.stChatInput,
+[data-testid="stBottomBlockContainer"] .stChatInput,
+[data-testid="stChatInput"] {
+  background-color: #303030 !important;
+  border: 1px solid #4a4a4a !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, .22) !important;
+  padding: 0 .2rem !important;
+}
+/* Streamlit applies its secondary (previously blue) background to this inner wrapper. */
+[data-testid="stChatInput"] > div,
+div.stChatInput > div {
+  background-color: #303030 !important;
+  border: 0 !important;
+  border-radius: 1.5rem !important;
+  box-shadow: none !important;
+}
+[data-testid="stChatInput"] textarea { color: #f4f4f4; padding: .8rem .2rem; }
+[data-testid="stChatInput"] textarea::placeholder { color: #a8a8a8; }
+[data-testid="stChatInput"] button { background: #ececec; color: #212121; border-radius: .75rem; }
+[data-testid="stChatInput"] button:hover { background: #fff; color: #212121; }
+.st-key-edit_0 button,
+[data-testid="stChatMessage"] [data-testid="stButton"] button {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: #a8a8a8 !important;
+  min-width: max-content !important;
+  padding: .25rem 0 !important;
+  white-space: nowrap !important;
+}
+[data-testid="stChatMessage"] [data-testid="stButton"] button:hover { color: #f4f4f4 !important; }
+.edit-label { color: #a8a8a8; font-size: .82rem; margin: .75rem 0 .35rem; }
+[data-testid="stTextArea"] textarea { background: #2b2b2b; border: 1px solid #4a4a4a; color: #ececec; }

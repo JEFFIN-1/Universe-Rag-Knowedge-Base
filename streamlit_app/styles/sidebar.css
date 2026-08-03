@@ -1,8 +1,40 @@
 [data-testid="stSidebar"] { background: #171717; border-right: 1px solid #303030; }
 [data-testid="stSidebar"] * { color: #ececec; }
+/* Streamlit's generated page menu includes the unwanted App and duplicate Chat links. */
+[data-testid="stSidebarNav"] { display: none; }
 .brand { font-size: 1.3rem; font-weight: 700; letter-spacing: -.04em; margin: .3rem 0; }
-.brand span { margin-left: .35rem; }
 .side-label { font-size: .68rem; font-weight: 700; letter-spacing: .08em; color: #989898 !important; margin-top: 1.5rem; }
 .connection { color: #bcbcbc; font-size: .85rem; display: flex; align-items: center; gap: .5rem; }
 .connection i { width: .5rem; height: .5rem; border-radius: 50%; display: inline-block; }
-.connection .online { background: #28c840; }.connection .offline { background: #eab308; }
+.connection .online { background: #bcbcbc; }.connection .offline { background: #707070; }
+[data-testid="stSidebar"] [data-testid="stPageLink-NavLink"] { border-radius: .45rem; color: #d0d0d0; padding: .45rem .55rem; }
+[data-testid="stSidebar"] [data-testid="stPageLink-NavLink"]:hover { background: #2b2b2b; color: #fff; }
+
+/* On desktop the open sidebar participates in the flex layout instead of overlaying chat. */
+@media (min-width: 769px) {
+  [data-testid="stSidebar"][aria-expanded="true"] {
+    position: relative !important;
+    flex: 0 0 15.5rem !important;
+    width: 15.5rem !important;
+    min-width: 15.5rem !important;
+    max-width: 15.5rem !important;
+    transform: none !important;
+  }
+
+  [data-testid="stSidebar"][aria-expanded="true"] + div {
+    flex: 1 1 auto !important;
+    width: calc(100% - 15.5rem) !important;
+  }
+
+  /* A collapsed sidebar must not retain the width of the open navigation. */
+  [data-testid="stSidebar"][aria-expanded="false"] {
+    flex: 0 0 0 !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+  }
+
+  [data-testid="stSidebar"][aria-expanded="false"] + div {
+    width: 100% !important;
+  }
+}
