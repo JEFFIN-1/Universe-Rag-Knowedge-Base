@@ -1,0 +1,148 @@
+[
+  {
+    "id": "q01",
+    "category": "factual",
+    "answerable": true,
+    "question": "What is the standard cosmological model based on?",
+    "expected_answer": "The document states that the standard cosmological model is based on the Friedmann–Lemaître–Robertson–Walker (FLRW) solution of Einstein's equations.",
+    "source_documents": [
+      "In modern scientific terms.pdf"
+    ],
+    "source_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q02",
+    "category": "factual",
+    "answerable": true,
+    "question": "What three observational pillars provide the main empirical support for the ΛCDM model?",
+    "expected_answer": "The three central observational pillars are galactic redshifts and Hubble's Law, the Cosmic Microwave Background (CMB), and the observed abundances of light elements.",
+    "source_documents": [
+      "Cosmic Origins Research Plan.pdf"
+    ],
+    "source_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q03",
+    "category": "factual",
+    "answerable": true,
+    "question": "Approximately how old is the observable universe according to the documents?",
+    "expected_answer": "The documents give an age of approximately 13.8 billion years for the observable universe.",
+    "source_documents": [
+      "In modern scientific terms.pdf"
+    ],
+    "source_pages": [
+      1,
+      3,
+      6
+    ]
+  },
+  {
+    "id": "q04",
+    "category": "conceptual",
+    "answerable": true,
+    "question": "Why can asking what happened before the Big Bang be problematic in standard cosmology?",
+    "expected_answer": "The documents explain that if time itself began with the Big Bang, there may be no meaningful 'before' in the ordinary sense. At the Planck scale, current theories also break down and a quantum theory of gravity is expected to be necessary.",
+    "source_documents": [
+      "In modern scientific terms.pdf"
+    ],
+    "source_pages": [
+      1,
+      6,
+      7
+    ]
+  },
+  {
+    "id": "q05",
+    "category": "conceptual",
+    "answerable": true,
+    "question": "How does inflation address the horizon and flatness problems?",
+    "expected_answer": "Inflation proposes an extremely rapid exponential expansion of space in the very early universe. This expansion stretches a previously small, causally connected region to a much larger scale, explaining observed large-scale uniformity while driving spatial geometry toward near-flatness.",
+    "source_documents": [
+      "In modern scientific terms.pdf",
+      "Cosmic Origins Research Plan.pdf"
+    ],
+    "source_pages": [
+      1,
+      2
+    ]
+  },
+  {
+    "id": "q06",
+    "category": "conceptual",
+    "answerable": true,
+    "question": "What is the main difference between the scientific explanation of cosmic origins and philosophical or religious explanations in the documents?",
+    "expected_answer": "The documents describe physical cosmology as using empirical observations and mathematical models to explain how the universe evolved, while philosophy examines causality, time, fine-tuning, and epistemological limits, and religious traditions address creation, purpose, divine agency, or existential meaning.",
+    "source_documents": [
+      "In modern scientific terms.pdf",
+      "Cosmic Origins Research Plan.pdf"
+    ],
+    "source_pages": [
+      3,
+      4,
+      8,
+      10
+    ]
+  },
+  {
+    "id": "q07",
+    "category": "numerical_application",
+    "answerable": true,
+    "question": "According to the stated primordial Big Bang composition of approximately 75% hydrogen and 25% helium by mass, how much hydrogen and helium would be present in a hypothetical 1,000 kg sample with that same composition?",
+    "expected_answer": "The sample would contain approximately 750 kg of hydrogen and 250 kg of helium.",
+    "source_documents": [
+      "Cosmic Origins Research Plan.pdf"
+    ],
+    "source_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q08",
+    "category": "numerical_application",
+    "answerable": true,
+    "question": "The inflationary model in the documents states that inflation increased the size of the universe by at least a factor of 10^50. How many orders of magnitude of increase does that represent?",
+    "expected_answer": "A factor of 10^50 represents an increase of 50 orders of magnitude.",
+    "source_documents": [
+      "Cosmic Origins Research Plan.pdf"
+    ],
+    "source_pages": [
+      2
+    ]
+  },
+  {
+    "id": "q09",
+    "category": "unanswerable",
+    "answerable": false,
+    "question": "According to the documents, what is the experimentally measured mass of the dark-matter particle?",
+    "expected_answer": "The documents do not provide an experimentally measured mass for a dark-matter particle. They state that the nature and composition of dark matter remain unknown.",
+    "source_documents": [
+      "In modern scientific terms.pdf"
+    ],
+    "source_pages": [
+      3
+    ],
+    "expected_behavior": "refuse_or_state_insufficient_information"
+  },
+  {
+    "id": "q10",
+    "category": "unanswerable",
+    "answerable": false,
+    "question": "According to the documents, what is the exact confirmed physical mechanism that caused the Big Bang?",
+    "expected_answer": "The documents do not identify an exact confirmed physical mechanism that caused the Big Bang. They describe several theoretical possibilities, including inflationary, quantum-cosmological, cyclic, and brane-based models, but state that no single theory is confirmed.",
+    "source_documents": [
+      "In modern scientific terms.pdf",
+      "Cosmic Origins Research Plan.pdf"
+    ],
+    "source_pages": [
+      2,
+      7,
+      8,
+      10
+    ],
+    "expected_behavior": "refuse_or_state_insufficient_information"
+  }
+]
