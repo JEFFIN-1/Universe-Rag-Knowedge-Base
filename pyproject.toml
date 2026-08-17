@@ -5,14 +5,19 @@ description = "A PDF-backed retrieval-augmented generation service"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "elasticsearch>=9.4.1",
+    "deepeval>=4.1.8",
+    "elasticsearch>=8.18,<9",
     "fastapi>=0.115.0",
+    "groq>=1.6.0",
     "jupyter>=1.1.1",
+    "litellm>=1.97.0",
+    "onnxruntime>=1.28.0",
     "openai>=2.46.0",
     "psycopg[binary]>=3.3.4",
     "pypdf>=5.0.0",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
     "streamlit>=1.40.0",
+    "tokenizers>=0.23.1",
     "uvicorn[standard]>=0.30.0",
 ]

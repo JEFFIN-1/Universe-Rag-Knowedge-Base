@@ -1,7 +1,7 @@
 :root { color-scheme: dark; }
 .stApp { background: #212121; color: #ececec; }
 [data-testid="stHeader"] { background: #212121; }
-[data-testid="stMainBlockContainer"] { max-width: 48rem; padding-top: 2.5rem; padding-bottom: 8rem; }
+[data-testid="stMainBlockContainer"] { max-width: 48rem; padding-top: 2.5rem; padding-bottom: 5rem; }
 .hero { text-align: center; margin: 0 0 1.4rem; padding: 1rem 0; }
 .hero h1 { color: #f4f4f4; font-size: 1.9rem; letter-spacing: -.04em; margin: 0; }
 .hero p { color: #a8a8a8; margin: .45rem 0 0; }
@@ -21,6 +21,14 @@
 [data-testid="stBottom"],
 [data-testid="stBottom"] > div,
 [data-testid="stBottomBlockContainer"] { background: #212121 !important; }
+
+/* Keep the fixed composer beneath the main pane, rather than beneath the sidebar. */
+@media (min-width: 769px) {
+  .stApp:has([data-testid="stSidebar"][aria-expanded="true"]) [data-testid="stBottom"] {
+    left: 15.5rem !important;
+    width: calc(100% - 15.5rem) !important;
+  }
+}
 /* Keep the composer visibly separate from the page—not transparent/plain text. */
 div.stChatInput,
 [data-testid="stBottomBlockContainer"] .stChatInput,

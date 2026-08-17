@@ -23,15 +23,20 @@ def ask(question: str, top_k: int = 5) -> dict:
 
     response_time = time.perf_counter() - start
 
-    log_conversation(
-        question=question,
-        answer=answer,
-        response_time=response_time,
-        retrieved_chunks=len(documents),
-        model="llama"
-    )
+    # Monitoring must not make a successful chat request fail when PostgreSQL is
+    # not configured or unavailable.
+    try:
+        log_conversation(
+            question=question,
+            answer=answer,
+            response_time=response_time,
+            retrieved_chunks=len(documents),
+            model="llama"
+        )
+    except Exception as exc:
+        print(f"Monitoring skipped: {exc}")
 
     return {
         "answer": answer,
-        "documents": documents
+        "sources": documents
     }

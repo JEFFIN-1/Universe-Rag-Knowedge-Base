@@ -1,9 +1,9 @@
-from .elasticsearch_client import es, INDEX_NAME
+from ingestion.vector_store import INDEX_NAME, get_client
 
 
 def bm25_search(query, top_k=5):
 
-    response = es.search(
+    response = get_client().search(
         index=INDEX_NAME,
         query={
             "match": {

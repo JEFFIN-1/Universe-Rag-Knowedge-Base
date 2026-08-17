@@ -2,3 +2,9 @@
 .env
 .uv.lock
 .pyproject.toml
+
+# DeepEval generated files
+.deepeval/.temp-*
+.deepeval/.deepeval-cache.json
+__pycache__/
+*.py[cod]

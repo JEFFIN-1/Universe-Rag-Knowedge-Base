@@ -5,7 +5,7 @@ from collections.abc import Sequence
 
 from elasticsearch import Elasticsearch
 
-INDEX_NAME = os.getenv("ELASTICSEARCH_INDEX", "rag-documents")
+INDEX_NAME = os.getenv("ELASTICSEARCH_INDEX", "pdf_documents")
 
 
 def get_client() -> Elasticsearch:

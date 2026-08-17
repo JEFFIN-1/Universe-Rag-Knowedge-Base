@@ -31,8 +31,8 @@ if question:
                 result = ask(question, limit)
                 answer = result.get("answer") or "I couldn’t find a grounded answer."
                 sources = result.get("sources", [])
-            except Exception:
-                answer = "The RAG API is not running yet. Start it with `uvicorn app.main:app --reload` and try again."
+            except Exception as exc:
+                answer = f"The RAG request failed: `{exc}`"
                 sources = []
         st.markdown(answer)
         render_sources(sources)

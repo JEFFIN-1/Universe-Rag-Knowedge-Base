@@ -1,14 +1,13 @@
-from sentence_transformers import SentenceTransformer
-from .elasticsearch_client import es, INDEX_NAME
+"""Dense-vector retrieval using the checked-in local ONNX embedding model."""
 
-model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+from ingestion.embeddings import embed_query
+from ingestion.vector_store import INDEX_NAME, get_client
 
 
 def vector_search(query, top_k=5):
+    query_vector = embed_query(query)
 
-    query_vector = model.encode(query).tolist()
-
-    response = es.search(
+    response = get_client().search(
         index=INDEX_NAME,
         knn={
             "field": "embedding",
